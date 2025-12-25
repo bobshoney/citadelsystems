@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusTech Solutions | Corporate IT Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Citadel Systems IT - Enterprise-Grade IT Solutions</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏰</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">
-                <i class="fas fa-network-wired"></i>
-                <span>NexusTech</span>
-            </a>
-            
-            <div class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#solutions" class="nav-link">Solutions</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#" class="btn-login">
-                    <i class="fas fa-user-circle"></i> Client Portal
-                </a>
+            <div class="nav-brand">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Citadel Systems IT</span>
+                </div>
             </div>
             
-            <button class="hamburger">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                    <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <a href="#" class="btn btn-outline client-portal">
+                    <i class="fas fa-lock"></i>
+                    <span>Client Portal</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -39,56 +49,135 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Enterprise-Grade <span class="highlight">IT Solutions</span> for Modern Businesses</h1>
-                <p>Providing comprehensive IT services to Fortune 500 companies worldwide with 99.9% uptime guarantee and 24/7 support.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Get Consultation</a>
-                    <a href="#services" class="btn-secondary">View Services <i class="fas fa-arrow-right"></i></a>
+                <h1 class="hero-title">Enterprise-Grade IT Solutions for Modern Businesses</h1>
+                <p class="hero-subtitle">Trusted by Fortune 500 companies with 99.9% uptime SLA and 24/7 proactive support</p>
+                
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Get Consultation
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-server"></i>
+                        View Services
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="dashboard-preview">
-                    <div class="dashboard-header">
-                        <div class="server-status active"></div>
-                        <span>Live Network Dashboard</span>
-                    </div>
-                    <div class="metrics-grid">
-                        <div class="metric">
-                            <div class="metric-value" data-count="99.9">0</div>
-                            <div class="metric-label">Uptime %</div>
+            
+            <div class="dashboard-preview">
+                <div class="dashboard-header">
+                    <h3><i class="fas fa-tachometer-alt"></i> System Dashboard</h3>
+                    <span class="status-indicator active">
+                        <span class="pulse"></span>
+                        All Systems Operational
+                    </span>
+                </div>
+                
+                <div class="dashboard-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Global Uptime</div>
+                        <div class="metric-value" id="uptime-metric">99.91%</div>
+                        <div class="metric-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+0.02%</span>
                         </div>
-                        <div class="metric">
-                            <div class="metric-value" data-count="150">0</div>
-                            <div class="metric-label">Active Servers</div>
+                    </div>
+                    
+                    <div class="metric">
+                        <div class="metric-label">Active Servers</div>
+                        <div class="metric-value" id="servers-metric">5,247</div>
+                        <div class="metric-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12</span>
                         </div>
                     </div>
+                    
+                    <div class="metric">
+                        <div class="metric-label">Incidents</div>
+                        <div class="metric-value">3</div>
+                        <div class="metric-trend down">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>-2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric">
+                        <div class="metric-label">Response Time</div>
+                        <div class="metric-value">8s</div>
+                        <div class="metric-trend up">
+                            <i class="fas fa-bolt"></i>
+                            <span>-2s</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-footer">
+                    <div class="server-status">
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>Production</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>Development</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>Backup</span>
+                        </div>
+                    </div>
+                    <div class="last-update">Last updated: Just now</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Statistics Section -->
     <section class="stats">
         <div class="container">
-            <div class="stat-card">
-                <i class="fas fa-user-shield"></i>
-                <div class="stat-number" data-count="250">0</div>
-                <div class="stat-label">Enterprise Clients</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-server"></i>
-                <div class="stat-number" data-count="5000">0</div>
-                <div class="stat-label">Servers Managed</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-headset"></i>
-                <div class="stat-number" data-count="247">0</div>
-                <div class="stat-label">24/7 Support</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-shield-alt"></i>
-                <div class="stat-number" data-count="99">0</div>
-                <div class="stat-label">Security Compliance</div>
+            <h2 class="section-title">Trusted by Global Enterprises</h2>
+            <p class="section-subtitle">Our proven track record speaks for itself</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="counter" data-target="250">0</div>
+                        <span class="stat-label">Enterprise Clients</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="counter" data-target="5000">0</div>
+                        <span class="stat-label">Servers Managed</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="counter" data-target="24">0</div>
+                        <span class="stat-label">/7 Support</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="counter" data-target="99">0</div>
+                        <span class="stat-label">Security Compliance</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -97,8 +186,8 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our <span class="highlight">IT Services</span></h2>
-                <p>Comprehensive enterprise IT solutions tailored to your business needs</p>
+                <h2 class="section-title">Our IT Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for your digital transformation</p>
             </div>
             
             <div class="services-grid">
@@ -106,13 +195,15 @@
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>AWS, Azure, and Google Cloud migration, management, and optimization.</p>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">Scalable cloud infrastructure and migration services across leading platforms</p>
+                    
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Cloud Migration</li>
-                        <li><i class="fas fa-check"></i> Multi-Cloud Strategy</li>
-                        <li><i class="fas fa-check"></i> Cost Optimization</li>
+                        <li><i class="fas fa-check"></i> AWS, Azure & Google Cloud</li>
+                        <li><i class="fas fa-check"></i> Cloud Migration & Optimization</li>
+                        <li><i class="fas fa-check"></i> Containerization & Orchestration</li>
                     </ul>
+                    
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -120,13 +211,15 @@
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Enterprise-grade security with threat detection and compliance management.</p>
+                    <h3 class="service-title">Cybersecurity</h3>
+                    <p class="service-description">Advanced threat protection and compliance management for your enterprise</p>
+                    
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Threat Intelligence</li>
-                        <li><i class="fas fa-check"></i> Compliance Audit</li>
-                        <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
+                        <li><i class="fas fa-check"></i> Threat Detection & Response</li>
+                        <li><i class="fas fa-check"></i> Compliance & Risk Management</li>
+                        <li><i class="fas fa-check"></i> Endpoint & Network Security</li>
                     </ul>
+                    
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -134,13 +227,15 @@
                     <div class="service-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3>Network Infrastructure</h3>
-                    <p>Design, implementation, and management of secure enterprise networks.</p>
+                    <h3 class="service-title">Network Infrastructure</h3>
+                    <p class="service-description">Reliable, high-performance networking solutions for modern businesses</p>
+                    
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> SD-WAN Solutions</li>
-                        <li><i class="fas fa-check"></i> Load Balancing</li>
-                        <li><i class="fas fa-check"></i> Disaster Recovery</li>
+                        <li><i class="fas fa-check"></i> SD-WAN & Load Balancing</li>
+                        <li><i class="fas fa-check"></i> Network Monitoring & Optimization</li>
+                        <li><i class="fas fa-check"></i> Wireless & VPN Solutions</li>
                     </ul>
+                    
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -148,13 +243,15 @@
                     <div class="service-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3>Data Management</h3>
-                    <p>Big data solutions, database administration, and business intelligence.</p>
+                    <h3 class="service-title">Data Management</h3>
+                    <p class="service-description">Comprehensive data solutions for storage, analytics, and business intelligence</p>
+                    
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Data Warehousing</li>
-                        <li><i class="fas fa-check"></i> Backup Solutions</li>
-                        <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i> Data Warehousing & Analytics</li>
+                        <li><i class="fas fa-check"></i> Backup & Disaster Recovery</li>
+                        <li><i class="fas fa-check"></i> Business Intelligence Integration</li>
                     </ul>
+                    
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -162,71 +259,63 @@
     </section>
 
     <!-- Client Accounts Section -->
-    <section class="accounts">
+    <section class="client-accounts">
         <div class="container">
             <div class="section-header">
-                <h2>Client <span class="highlight">Accounts Served</span></h2>
-                <p>Real-time metrics from our global client portfolio</p>
+                <h2 class="section-title">Client Accounts Served</h2>
+                <p class="section-subtitle">Our global reach and service excellence metrics</p>
             </div>
             
             <div class="accounts-grid">
                 <div class="account-metric">
-                    <div class="metric-container">
-                        <div class="metric-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="metric-details">
-                            <div class="metric-value" data-count="1500">0</div>
-                            <div class="metric-label">Active Accounts</div>
-                        </div>
+                    <div class="metric-header">
+                        <h3>Active Accounts</h3>
+                        <div class="metric-value" data-target="1500">0</div>
                     </div>
-                    <div class="metric-progress">
-                        <div class="progress-bar" style="width: 85%"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="92"></div>
+                    </div>
+                    <div class="metric-footer">
+                        <span>+12% growth YoY</span>
                     </div>
                 </div>
                 
                 <div class="account-metric">
-                    <div class="metric-container">
-                        <div class="metric-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="metric-details">
-                            <div class="metric-value" data-count="45">0</div>
-                            <div class="metric-label">Countries Served</div>
-                        </div>
+                    <div class="metric-header">
+                        <h3>Countries Served</h3>
+                        <div class="metric-value" data-target="45">0</div>
                     </div>
-                    <div class="metric-progress">
-                        <div class="progress-bar" style="width: 90%"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="78"></div>
+                    </div>
+                    <div class="metric-footer">
+                        <span>Global presence across 6 continents</span>
                     </div>
                 </div>
                 
                 <div class="account-metric">
-                    <div class="metric-container">
-                        <div class="metric-icon">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <div class="metric-details">
-                            <div class="metric-value" data-count="98">0</div>
-                            <div class="metric-label">Satisfaction Rate</div>
-                        </div>
+                    <div class="metric-header">
+                        <h3>Satisfaction Rate</h3>
+                        <div class="metric-value" data-target="98">0<small>%</small></div>
                     </div>
-                    <div class="metric-progress">
-                        <div class="progress-bar" style="width: 98%"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="98"></div>
+                    </div>
+                    <div class="metric-footer">
+                        <span>Based on 2024 client surveys</span>
                     </div>
                 </div>
                 
                 <div class="account-metric">
-                    <div class="metric-container">
-                        <div class="metric-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="metric-details">
-                            <div class="metric-value" data-count="2">0</div>
-                            <div class="metric-label">Avg. Response Time (hrs)</div>
-                        </div>
+                    <div class="metric-header">
+                        <h3>Avg. Response Time</h3>
+                        <div class="metric-value" data-target="2">0<small> hours</small></div>
                     </div>
-                    <div class="metric-progress">
-                        <div class="progress-bar" style="width: 95%"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="95"></div>
+                    </div>
+                    <div class="metric-footer">
+                        <span>For critical priority tickets</span>
                     </div>
                 </div>
             </div>
@@ -237,168 +326,346 @@
     <section id="solutions" class="solutions">
         <div class="container">
             <div class="section-header">
-                <h2>Enterprise <span class="highlight">Solutions</span></h2>
-                <p>Industry-specific IT solutions for your business challenges</p>
+                <h2 class="section-title">Enterprise Solutions</h2>
+                <p class="section-subtitle">Industry-specific IT solutions tailored to your business needs</p>
             </div>
             
-            <div class="solutions-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="finance">Finance</button>
-                    <button class="tab-btn" data-tab="healthcare">Healthcare</button>
-                    <button class="tab-btn" data-tab="manufacturing">Manufacturing</button>
-                    <button class="tab-btn" data-tab="retail">Retail</button>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="finance">
+                        <i class="fas fa-chart-line"></i>
+                        Finance
+                    </button>
+                    <button class="tab-btn" data-tab="healthcare">
+                        <i class="fas fa-hospital"></i>
+                        Healthcare
+                    </button>
+                    <button class="tab-btn" data-tab="manufacturing">
+                        <i class="fas fa-industry"></i>
+                        Manufacturing
+                    </button>
+                    <button class="tab-btn" data-tab="retail">
+                        <i class="fas fa-shopping-cart"></i>
+                        Retail
+                    </button>
                 </div>
                 
-                <div class="tab-content">
+                <div class="tabs-content">
                     <div class="tab-pane active" id="finance">
-                        <h3>Financial Services IT Solutions</h3>
-                        <p>Secure, compliant technology solutions for banks, insurance, and financial institutions.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> PCI-DSS Compliance</li>
-                            <li><i class="fas fa-check-circle"></i> Real-time Transaction Monitoring</li>
-                            <li><i class="fas fa-check-circle"></i> Risk Management Systems</li>
-                        </ul>
+                        <div class="tab-content-inner">
+                            <h3>Financial Services Solutions</h3>
+                            <p>Secure, compliant technology solutions for banking, investment, and financial institutions.</p>
+                            
+                            <ul class="tab-features">
+                                <li><i class="fas fa-check-circle"></i> Regulatory compliance (SOX, GDPR, PCI DSS)</li>
+                                <li><i class="fas fa-check-circle"></i> High-frequency trading infrastructure</li>
+                                <li><i class="fas fa-check-circle"></i> Fraud detection and prevention systems</li>
+                                <li><i class="fas fa-check-circle"></i> Secure data encryption and tokenization</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-outline">Explore Finance Solutions</a>
+                        </div>
                     </div>
+                    
                     <div class="tab-pane" id="healthcare">
-                        <h3>Healthcare IT Solutions</h3>
-                        <p>HIPAA-compliant systems for hospitals, clinics, and healthcare providers.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> EHR System Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Patient Data Security</li>
-                            <li><i class="fas fa-check-circle"></i> Telemedicine Infrastructure</li>
-                        </ul>
+                        <div class="tab-content-inner">
+                            <h3>Healthcare Technology Solutions</h3>
+                            <p>HIPAA-compliant IT infrastructure for hospitals, clinics, and healthcare providers.</p>
+                            
+                            <ul class="tab-features">
+                                <li><i class="fas fa-check-circle"></i> EHR/EMR system integration and management</li>
+                                <li><i class="fas fa-check-circle"></i> HIPAA compliance and data security</li>
+                                <li><i class="fas fa-check-circle"></i> Telemedicine infrastructure and support</li>
+                                <li><i class="fas fa-check-circle"></i> Medical IoT device management</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-outline">Explore Healthcare Solutions</a>
+                        </div>
                     </div>
+                    
                     <div class="tab-pane" id="manufacturing">
-                        <h3>Manufacturing IT Solutions</h3>
-                        <p>Industry 4.0 solutions for smart factories and supply chain optimization.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> IoT Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Predictive Maintenance</li>
-                            <li><i class="fas fa-check-circle"></i> Supply Chain Automation</li>
-                        </ul>
+                        <div class="tab-content-inner">
+                            <h3>Manufacturing & Industrial Solutions</h3>
+                            <p>Industrial IoT, automation, and supply chain optimization for manufacturing enterprises.</p>
+                            
+                            <ul class="tab-features">
+                                <li><i class="fas fa-check-circle"></i> Industrial IoT and smart factory solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Supply chain and inventory management systems</li>
+                                <li><i class="fas fa-check-circle"></i> Predictive maintenance and asset tracking</li>
+                                <li><i class="fas fa-check-circle"></i> Quality control and production monitoring</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-outline">Explore Manufacturing Solutions</a>
+                        </div>
                     </div>
+                    
                     <div class="tab-pane" id="retail">
-                        <h3>Retail IT Solutions</h3>
-                        <p>Omnichannel retail solutions with inventory management and customer analytics.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> POS System Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Inventory Management</li>
-                            <li><i class="fas fa-check-circle"></i> Customer Analytics</li>
-                        </ul>
+                        <div class="tab-content-inner">
+                            <h3>Retail & E-commerce Solutions</h3>
+                            <p>Omnichannel retail technology, POS systems, and customer experience optimization.</p>
+                            
+                            <ul class="tab-features">
+                                <li><i class="fas fa-check-circle"></i> Omnichannel retail and POS systems</li>
+                                <li><i class="fas fa-check-circle"></i> Inventory and supply chain management</li>
+                                <li><i class="fas fa-check-circle"></i> Customer analytics and personalization</li>
+                                <li><i class="fas fa-check-circle"></i> E-commerce platform optimization</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-outline">Explore Retail Solutions</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- Case Studies Section -->
-<section class="case-studies">
-    <div class="container">
-        <div class="section-header">
-            <h2>Enterprise <span class="highlight">Case Studies</span></h2>
-            <p>Real-world implementations delivering measurable business outcomes</p>
-        </div>
-        
-        <div class="case-study-grid">
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <span class="case-study-industry finance">
-                        <i class="fas fa-university"></i> Financial Services
-                    </span>
-                    <span class="case-study-results">+99.9% Uptime</span>
-                </div>
-                <h3>Global Bank Cloud Migration & Security Overhaul</h3>
-                <p>Migrated 500+ critical workloads to a hybrid AWS/Azure environment while implementing zero-trust security architecture, reducing latency by 40%.</p>
-                <div class="case-study-tech">
-                    <span>AWS</span>
-                    <span>Azure</span>
-                    <span>Zscaler</span>
-                    <span>Kubernetes</span>
-                </div>
-                <a href="#" class="case-study-link">
-                    Read Full Study <i class="fas fa-arrow-right"></i>
-                </a>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise Case Studies</h2>
+                <p class="section-subtitle">Real-world implementations delivering measurable business value</p>
             </div>
             
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <span class="case-study-industry healthcare">
-                        <i class="fas fa-hospital"></i> Healthcare
-                    </span>
-                    <span class="case-study-results">HIPAA Compliant</span>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-tag finance-tag">
+                            <i class="fas fa-chart-line"></i>
+                            Financial Services
+                        </span>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <div class="stat-value">40%</div>
+                                <div class="stat-label">Cost Reduction</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">99.99%</div>
+                                <div class="stat-label">Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="case-study-title">Global Bank Cloud Migration & Security Overhaul</h3>
+                    <p class="case-study-description">Implemented a multi-cloud strategy for a leading global bank, migrating 500+ applications to AWS and Azure while enhancing security posture and achieving regulatory compliance.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Cisco</span>
+                        <span class="tech-tag">Palo Alto</span>
+                    </div>
+                    
+                    <div class="case-study-footer">
+                        <a href="#" class="case-study-link">
+                            Read Full Study
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span class="case-study-duration">12-month engagement</span>
+                    </div>
                 </div>
-                <h3>Hospital Network EHR System Integration</h3>
-                <p>Designed and implemented a secure, high-availability network for a 10-hospital system, enabling seamless Epic EHR integration and telemedicine expansion.</p>
-                <div class="case-study-tech">
-                    <span>Cisco</span>
-                    <span>Epic Systems</span>
-                    <span>VMware</span>
-                    <span>Palo Alto</span>
+                
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-tag healthcare-tag">
+                            <i class="fas fa-hospital"></i>
+                            Healthcare
+                        </span>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <div class="stat-value">60%</div>
+                                <div class="stat-label">Faster Access</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">HIPAA Compliance</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="case-study-title">Hospital Network EHR System Integration</h3>
+                    <p class="case-study-description">Consolidated electronic health record systems across 15 hospital locations, improving data accessibility for medical staff while ensuring complete HIPAA compliance and data security.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Epic Systems</span>
+                        <span class="tech-tag">VMware</span>
+                        <span class="tech-tag">Fortinet</span>
+                        <span class="tech-tag">Microsoft</span>
+                    </div>
+                    
+                    <div class="case-study-footer">
+                        <a href="#" class="case-study-link">
+                            Read Full Study
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span class="case-study-duration">18-month engagement</span>
+                    </div>
                 </div>
-                <a href="#" class="case-study-link">
-                    Read Full Study <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="section-cta">
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-book-open"></i>
+                    View All Case Studies
                 </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Technology Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technology Partners</h2>
+                <p class="section-subtitle">Strategic alliances with industry-leading technology providers</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                </div>
+                
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </div>
+                </div>
+                
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Cisco</span>
+                    </div>
+                </div>
+                
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-server"></i>
+                        <span>VMware</span>
+                    </div>
+                </div>
+                
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Palo Alto</span>
+                    </div>
+                </div>
+                
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-firewall"></i>
+                        <span>Fortinet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-grid">
+            <div class="contact-container">
                 <div class="contact-info">
-                    <h2>Get in <span class="highlight">Touch</span></h2>
-                    <p>Ready to transform your IT infrastructure? Contact our enterprise solutions team.</p>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="contact-subtitle">Our team is ready to discuss your enterprise IT needs</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>24/7 Support Line</h4>
-                                <p>+1 (800) 555-ITHELP</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h3>24/7 Support Line</h3>
+                                <p>+1 (888) 555-IT-SUPPORT</p>
                             </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>enterprise@nexustech.com</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h3>Business Inquiries</h3>
+                                <p>solutions@citadelsystemsit.com</p>
                             </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Headquarters</h4>
-                                <p>123 Tech Plaza, Silicon Valley, CA 94000</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h3>Headquarters</h3>
+                                <p>123 Enterprise Blvd, Suite 1500<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 8AM - 6PM PST<br>24/7 Emergency Support Available</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Request Consultation</h3>
-                    <form id="consultationForm">
+                <div class="contact-form-container">
+                    <h3>Request a Consultation</h3>
+                    <p>Fill out the form below and our solutions team will contact you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="email" placeholder="Work Email" required>
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" placeholder="Company Name" required>
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                            <div class="error-message" id="company-error"></div>
                         </div>
+                        
                         <div class="form-group">
-                            <select required>
-                                <option value="">Select Service</option>
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
                                 <option value="cloud">Cloud Solutions</option>
-                                <option value="security">Cybersecurity</option>
+                                <option value="cybersecurity">Cybersecurity</option>
                                 <option value="network">Network Infrastructure</option>
                                 <option value="data">Data Management</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="other">Other</option>
                             </select>
+                            <div class="error-message" id="service-error"></div>
                         </div>
+                        
                         <div class="form-group">
-                            <textarea placeholder="Project Details" rows="4"></textarea>
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your IT challenges and requirements..."></textarea>
+                            <div class="error-message" id="message-error"></div>
                         </div>
-                        <button type="submit" class="btn-primary">Submit Request</button>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        
+                        <div id="form-message" class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -410,55 +677,77 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo">
-                        <i class="fas fa-network-wired"></i>
-                        <span>NexusTech</span>
-                    </a>
-                    <p>Enterprise IT solutions provider serving global corporations since 2005.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Citadel Systems IT</span>
+                    </div>
+                    <p class="footer-description">Enterprise-grade IT solutions for modern businesses. Trusted by Fortune 500 companies worldwide.</p>
+                    
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
                         <li><a href="#">Cloud Solutions</a></li>
                         <li><a href="#">Cybersecurity</a></li>
                         <li><a href="#">Network Infrastructure</a></li>
                         <li><a href="#">Data Management</a></li>
+                        <li><a href="#">Managed Services</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">News & Insights</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Client Portal</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
                         <li><a href="#">Compliance</a></li>
                         <li><a href="#">SLA</a></li>
                     </ul>
                 </div>
             </div>
             
+            <div class="footer-certifications">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>ISO 27001 Certified</span>
+                </div>
+                <div class="certification-badge">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS Advanced Partner</span>
+                </div>
+                <div class="certification-badge">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Microsoft Gold Partner</span>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 NexusTech Solutions. All rights reserved.</p>
-                <div class="footer-badges">
-                    <span class="badge"><i class="fas fa-shield-alt"></i> ISO 27001 Certified</span>
-                    <span class="badge"><i class="fas fa-cloud"></i> AWS Partner</span>
-                    <span class="badge"><i class="fas fa-microsoft"></i> Microsoft Gold Partner</span>
+                <p class="copyright">&copy; 2024 Citadel Systems IT. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
                 </div>
             </div>
         </div>
