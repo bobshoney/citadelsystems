@@ -60,49 +60,50 @@ tabButtons.forEach(button => {
     });
 });
 
-// Animated Counter Function
+// FIXED & IMPROVED COUNTER ANIMATION
 function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-count'));
-    const increment = target / 100;
+    const suffix = element.getAttribute('data-suffix') || '';
+    const duration = 2000; // ms
+    const steps = 60;
+    const step = target / steps;
+    const stepTime = duration / steps;
     let current = 0;
-    
+
     const timer = setInterval(() => {
-        current += increment;
+        current += step;
         if (current >= target) {
-            element.textContent = target + (element.classList.contains('metric-value') ? '' : '+');
+            element.textContent = target + suffix;
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current) + (element.classList.contains('metric-value') ? '' : '+');
+            // Format number with commas if large
+            element.textContent = Math.floor(current).toLocaleString() + suffix;
         }
-    }, 20);
+    }, stepTime);
 }
 
-// Intersection Observer for Counters and Animations
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
+// RELIABLE INTERSECTION OBSERVER SETUP
+let hasAnimated = false;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.classList.contains('stat-number') || 
-                entry.target.classList.contains('metric-value')) {
-                animateCounter(entry.target);
-            }
-            
-            if (entry.target.classList.contains('progress-bar')) {
-                entry.target.style.width = entry.target.style.width;
-            }
-            
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+function initCounters() {
+    const counterElements = document.querySelectorAll('[data-count]:not(.animated)');
+    
+    if (counterElements.length > 0 && !hasAnimated) {
+        counterElements.forEach(el => {
+            // Mark as animated immediately to prevent double triggers
+            el.classList.add('animated');
+            animateCounter(el);
+        });
+        hasAnimated = true;
+    }
+}
 
-// Observe all counters and progress bars
-counters.forEach(counter => observer.observe(counter));
-progressBars.forEach(bar => observer.observe(bar));
+// Trigger on load and scroll
+window.addEventListener('load', initCounters);
+window.addEventListener('scroll', initCounters);
+
+// Fallback: If still not working, trigger after a delay
+setTimeout(initCounters, 1000);
 
 // Form Submission
 if (form) {
