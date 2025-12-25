@@ -791,3 +791,95 @@ p {
         grid-template-columns: 1fr;
     }
 }
+/* Case Studies Styles */
+.case-studies {
+    padding: 6rem 0;
+    background-color: var(--dark);
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.case-study-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    border: 1px solid var(--gray);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.case-study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.case-study-industry {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.case-study-industry.finance {
+    background: rgba(77, 124, 254, 0.15);
+    color: var(--primary);
+}
+
+.case-study-industry.healthcare {
+    background: rgba(0, 212, 170, 0.15);
+    color: var(--success);
+}
+
+.case-study-results {
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+.case-study-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.case-study-tech span {
+    padding: 5px 12px;
+    background: rgba(136, 146, 176, 0.1);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--gray);
+}
+
+.case-study-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.case-study-link:hover {
+    gap: 12px;
+}
